@@ -8,9 +8,9 @@ my $registry = 'Bio::EnsEMBL::Registry';
 $registry->load_registry_from_db(
     -host => 'ensembldb.ensembl.org', # alternatively 'useastdb.ensembl.org'
     -user => 'anonymous',
-    -port => 5306 );
+    -port => 5306 ); #This is not constant. Sometimes it will be 3306.
 
-my $gene_adaptor = $registry->get_adaptor( 'Human', 'Core', 'Gene' );
+my $gene_adaptor = $registry->get_adaptor( 'Human', 'Core', 'Gene' ); #Change the organism names accordingly. 
 
 open(FILE,"Raw_counts_filter.txt");
 
